@@ -1,4 +1,4 @@
-from pprint import pprint
+#from pprint import pprint
 
 import requests
 
@@ -7,20 +7,20 @@ from resource import testData as td
 
 
 def test_get_all_customer():
-    res = requests.get(cf.url, auth=cf.auth)
+    res = requests.get(cf.url_sp, auth=cf.auth_sp)
     print(res.json())
 
 
 def test_post_creat_customer():
-    res = requests.post(cf.url, auth=cf.auth, json=td.json_data)
+    res = requests.post(cf.url_sp, auth=cf.auth_sp, json=td.json_data_sp)
     print(res.json())
 
 
 def test_put_all_customer():
-    res = requests.put(cf.update_url, auth=cf.auth, json=td.update_data)
+    res = requests.put(cf.update_url_sp, auth=cf.auth_sp, json=td.update_data_sp)
     print(res.json())
 
 
 def test_delete_customer():
-    res = requests.delete(cf.delete_url, auth=cf.auth)
+    res = requests.delete(cf.delete_url_sp, auth=cf.auth_sp)
     print(res.json())
